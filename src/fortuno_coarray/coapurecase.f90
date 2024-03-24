@@ -56,7 +56,7 @@ contains
   subroutine coa_pure_case_run(this, ctx)
 
     !> Instance
-    class(coa_pure_case), intent(inout) :: this
+    class(coa_pure_case), intent(in) :: this
 
     !> Context to use
     class(coa_context), intent(inout) :: ctx

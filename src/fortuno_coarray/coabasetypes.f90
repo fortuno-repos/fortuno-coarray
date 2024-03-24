@@ -26,7 +26,7 @@ module fortuno_coarray_coabasetypes
     subroutine coa_pure_case_base_run(this, ctx)
       import :: coa_pure_case_base, coa_context
       implicit none
-      class(coa_pure_case_base), intent(inout) :: this
+      class(coa_pure_case_base), intent(in) :: this
       class(coa_context), intent(inout) :: ctx
     end subroutine coa_pure_case_base_run
 

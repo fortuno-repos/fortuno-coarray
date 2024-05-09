@@ -8,13 +8,13 @@ project(
   version: '0.1.0',
 )
 
-coarray_flags = get_option('coarray_flags')
+coarray_compile_flags = get_option('coarray_compile_flags')
 coarray_link_flags = get_option('coarray_link_flags')
 
 fortuno_coarray_deps = []
 
 # Disabling coarray detection as it seems to be fragile. Make sure to pass the right coarray
-# compiler and linker arguments via the "coarray_flags" and "coarray_link_flags" build variables.
+# compiler and linker arguments via the "coarray_compile_flags" and "coarray_link_flags" build variables.
 # coarray_dep = dependency('coarray')
 # fortuno_coarray_deps += coarray_dep
 
@@ -23,7 +23,7 @@ fortuno_dep = dependency(
   fallback: ['fortuno', 'fortuno_dep'],
   default_options: {
     'build_serial_interface': false,
-    'thread_safe_flags': coarray_flags,
+    'thread_safe_flags': coarray_compile_flags,
     'thread_safe_link_flags': coarray_link_flags
   },
 )
@@ -37,7 +37,7 @@ fortuno_coarray_lib = library(
   version: meson.project_version(),
   sources: fortuno_coarray_srcs,
   dependencies: fortuno_coarray_deps,
-  fortran_args: coarray_flags,
+  fortran_args: coarray_compile_flags,
   link_args: coarray_link_flags,
 )
 

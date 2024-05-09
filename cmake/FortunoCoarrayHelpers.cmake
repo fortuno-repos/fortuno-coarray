@@ -27,8 +27,8 @@ endfunction ()
 # Defines the coarray target for coarray dependent parts
 function (fortuno_coa_def_coarray_build_target)
 
-  if (FORTUNO_COA_COARRAY_FLAGS)
-    set(_compiler_flags "${FORTUNO_COA_COARRAY_FLAGS}")
+  if (FORTUNO_COA_COARRAY_COMPILE_FLAGS)
+    set(_compiler_flags "${FORTUNO_COA_COARRAY_COMPILE_FLAGS}")
   elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "IntelLLVM")
     set(_compiler_flags "-coarray")
   elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "NAG")

@@ -2,9 +2,6 @@
 # Licensed under the BSD-2-Clause Plus Patent license.
 # SPDX-License-Identifier: BSD-2-Clause-Patent
 
-# The CMake config files were created based on the public template at
-# https://github.com/LecrisUT/CMake-Template
-
 #[=================================================================================================[
 #                                 Basic project definition                                        #
 ]=================================================================================================]
@@ -39,7 +36,7 @@ set(
   "Fortuno: Sub-directory to install the Fortran module files into (relative to CMAKE_INSTALL_LIBDIR)"
 )
 
-set(FORTUNO_COA_COARRAY_FLAGS "" CACHE STRING "Fortuno: Flags to use when compiling coarray source")
+set(FORTUNO_COA_COARRAY_COMPILE_FLAGS "" CACHE STRING "Fortuno: Flags to use when compiling coarray source")
 
 set(
   FORTUNO_COA_COARRAY_LINK_FLAGS "" CACHE STRING

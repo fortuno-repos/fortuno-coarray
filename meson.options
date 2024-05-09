@@ -5,7 +5,7 @@
 option('build_examples', type: 'boolean', value: false, description: 'Build examples')
 
 option(
-  'coarray_flags', type: 'array', value: [],
+  'coarray_compile_flags', type: 'array', value: [],
   description: 'Fortran compiler arguments to use when compiling coarray sources'
 )
 

@@ -72,7 +72,7 @@ jobs:
         run: |
           export PKG_CONFIG_PATH="${PWD}/${INSTALL_DIR}/lib/pkgconfig:${PKG_CONFIG_PATH}"
           cd test/export
-          meson setup --wrap-mode nofallback -Dcoarray_flags='-coarray' -Dcoarray_link_flags='-coarray' ${BUILD_DIR}
+          meson setup --wrap-mode nofallback -Dcoarray_compile_flags='-coarray' -Dcoarray_link_flags='-coarray' ${BUILD_DIR}
           ninja -C ${BUILD_DIR}
           ${BUILD_DIR}/testapp
           rm -rf ./${BUILD_DIR}
@@ -85,7 +85,7 @@ jobs:
           mkdir subprojects
           echo -e "[wrap-git]\ndirectory=fortuno-coarray\n" > subprojects/fortuno-coarray.wrap
           echo -e "url=file://${FORTUNO_COARRAY_DIR}\nrevision=${GIT_REV}\n" >> subprojects/fortuno-coarray.wrap
-          meson setup --wrap-mode forcefallback -Dcoarray_flags='-coarray' -Dcoarray_link_flags='-coarray' ${BUILD_DIR}
+          meson setup --wrap-mode forcefallback -Dcoarray_compile_flags='-coarray' -Dcoarray_link_flags='-coarray' ${BUILD_DIR}
           ninja -C ${BUILD_DIR}
           ${BUILD_DIR}/testapp
           rm -rf subprojects ${BUILD_DIR}

@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: BSD-2-Clause-Patent
 
 option(
-  'coarray_flags', type: 'array', value: [],
+  'coarray_compile_flags', type: 'array', value: [],
   description: 'Fortran compiler arguments to use when compiling coarray sources'
 )
 

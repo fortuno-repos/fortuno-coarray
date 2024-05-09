@@ -12,7 +12,7 @@ project(
 
 ### Getting dependencies ###
 
-coarray_flags = get_option('coarray_flags')
+coarray_compile_flags = get_option('coarray_compile_flags')
 coarray_link_flags = get_option('coarray_link_flags')
 
 testapp_deps = []
@@ -20,7 +20,7 @@ testapp_deps = []
 fortuno_coarray_dep = dependency(
   'fortuno-coarray',
   fallback: ['fortuno-coarray', 'fortuno_coarray_dep'],
-  default_options: {'coarray_flags': coarray_flags, 'coarray_link_flags': coarray_link_flags},
+  default_options: {'coarray_compile_flags': coarray_compile_flags, 'coarray_link_flags': coarray_link_flags},
 )
 testapp_deps += fortuno_coarray_dep
 
@@ -33,6 +33,6 @@ testapp_exe = executable(
   'testapp',
   sources: testapp_srcs,
   dependencies: testapp_deps,
-  fortran_args: coarray_flags,
+  fortran_args: coarray_compile_flags,
   link_args: coarray_link_flags,
 )

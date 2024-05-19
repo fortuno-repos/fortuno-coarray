@@ -23,7 +23,7 @@ fortuno_dep = dependency(
   fallback: ['fortuno', 'fortuno_dep'],
   default_options: {
     'build_serial_interface': false,
-    'thread_safe_flags': coarray_compile_flags,
+    'thread_safe_compile_flags': coarray_compile_flags,
     'thread_safe_link_flags': coarray_link_flags
   },
 )

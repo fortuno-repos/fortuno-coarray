@@ -16,7 +16,7 @@ set_target_properties(
     OUTPUT_NAME fortuno-coarray
     Fortran_MODULE_DIRECTORY "${moduledir}"
 )
-target_link_libraries(fortuno_coarray PRIVATE CoarrayBuild)
+fortuno_coa_add_coarray_build_flags(fortuno_coarray)
 target_link_libraries(fortuno_coarray PUBLIC Fortuno::fortuno)
 target_include_directories(
   fortuno_coarray PUBLIC

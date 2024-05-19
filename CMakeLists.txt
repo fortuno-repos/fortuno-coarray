@@ -36,11 +36,15 @@ set(
   "Fortuno: Sub-directory to install the Fortran module files into (relative to CMAKE_INSTALL_LIBDIR)"
 )
 
-set(FORTUNO_COA_COARRAY_COMPILE_FLAGS "" CACHE STRING "Fortuno: Flags to use when compiling coarray source")
+set(
+  FORTUNO_COA_COARRAY_COMPILE_FLAGS
+  "-coarray"
+  CACHE STRING "Fortuno: Flags to use when compiling coarray source")
 
 set(
-  FORTUNO_COA_COARRAY_LINK_FLAGS "" CACHE STRING
-  "Fortuno: Flags to use when linking coarray object files"
+  FORTUNO_COA_COARRAY_LINK_FLAGS
+  "-coarray"
+  CACHE STRING "Fortuno: Flags to use when linking coarray object files"
 )
 
 option(
@@ -69,7 +73,6 @@ endif ()
 
 set(BUILD_SHARED_LIBS ${FORTUNO_COA_BUILD_SHARED_LIBS})
 fortuno_coa_setup_build_type("RelWithDebInfo")
-fortuno_coa_def_coarray_build_target()
 
 
 #[=================================================================================================[

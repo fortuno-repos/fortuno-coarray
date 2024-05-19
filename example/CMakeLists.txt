@@ -13,7 +13,7 @@ target_sources(
   FortunoCoarray_example_mylib PRIVATE
   mylib.f90
 )
-target_link_libraries(FortunoCoarray_example_mylib PRIVATE CoarrayBuild)
+fortuno_coa_add_coarray_build_flags(FortunoCoarray_example_mylib)
 
 add_executable(FortunoCoarray_example_testapp)
 set_target_properties(
@@ -27,5 +27,6 @@ target_sources(
 )
 target_link_libraries(
   FortunoCoarray_example_testapp PRIVATE
-  FortunoCoarray_example_mylib Fortuno::fortuno_coarray CoarrayBuild
+  FortunoCoarray_example_mylib Fortuno::fortuno_coarray
 )
+fortuno_coa_add_coarray_build_flags(FortunoCoarray_example_testapp)
